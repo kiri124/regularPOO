@@ -1,6 +1,6 @@
 package laboratorioPoo1;
 
-public class Rectangulo extends Cuadrilatero {
+public class Rectangulo extends Cuadrilatero implements Shape {
 
     public Rectangulo(String name, Punto vert1, Punto vert2, Punto vert3, Punto vert4) {
         super(name, vert1, vert2, vert3, vert4);
@@ -35,6 +35,30 @@ public class Rectangulo extends Cuadrilatero {
         return (p3.getCoordenadaY() - p1.getCoordenadaY()) * (p2.getCoordenadaY() - p1.getCoordenadaY())
              + (p3.getCoordenadaX() - p1.getCoordenadaX()) * (p2.getCoordenadaX() - p1.getCoordenadaX()) == 0;
     }
+
+
+
+
+    @Override
+    public double obtenerPerimetro() {
+        // Calcular el perímetro sumando las longitudes de los lados
+        double perimetro = getVertice1().getDistancia(getVertice2())
+                + getVertice2().getDistancia(getVertice3())
+                + getVertice3().getDistancia(getVertice4())
+                + getVertice4().getDistancia(getVertice1());
+
+        return perimetro;
+    }
+
+
+    
+   /*  @Override
+double obtenerPerimetro(){
+    double perimetro=
+    return perimetro;
+}*/
+
+
 }
 
 /* public abstract class rectangulo extends Cuadrilatero {

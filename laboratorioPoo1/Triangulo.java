@@ -8,7 +8,7 @@ package laboratorioPoo1;
  * forma (Regular o no) a las subclases.
  **/
 
-public class Triangulo extends FiguraGeometrica {
+public class Triangulo extends FiguraGeometrica implements Shape{
 
 	// Vértices del triángulo
 	private Punto vertice1;
@@ -74,4 +74,13 @@ public class Triangulo extends FiguraGeometrica {
 
 		return _esRegular;
 	}
+
+	@Override
+    public double obtenerPerimetro() {
+        // Calcula el perímetro sumando las distancias entre los vértices
+        double perimetro = vertice1.getDistancia(vertice2) + vertice2.getDistancia(vertice3)
+                + vertice3.getDistancia(vertice1);
+        return perimetro;
+    }
+	
 }

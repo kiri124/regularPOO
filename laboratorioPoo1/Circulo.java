@@ -1,6 +1,6 @@
 package laboratorioPoo1;
 
-public class Circulo extends FiguraGeometrica {
+public class Circulo extends FiguraGeometrica implements Shape {
 
 private double radio;
 private Punto centro;
@@ -39,6 +39,12 @@ public boolean esRegular(){
 @override
 public String toString(){
     return "Círculo: " + getNombre() + ", Centro: " + centro.toString() + ", Radio: " + radio;
+}
+
+@Override
+public double obtenerPerimetro(){
+    double perimetroCirculo= radio*2*Math.PI;
+    return perimetroCirculo;
 }
 
 }
